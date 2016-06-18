@@ -1,0 +1,279 @@
+body{
+	background-image: url("../img/dispenser-01.png");
+	background-repeat: no-repeat;
+}
+#main{
+	width:480px;
+	height:320px;
+	margin-left: 100px;
+	box-shadow: 0px 0px 10px #888888 inset, 0px 0px 40px 10px #ffffff;
+	border: 1px solid #888888;
+	transition: -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, filter .3s, -webkit-transform .3s, transform .3s;
+}
+
+.overlay{
+	background-color: rgba(255,255,255,.8);
+	font-size: 32px;
+	text-align: center;
+	font-weight: bold;
+
+	width:480px;
+	height:320px;
+	position: absolute;
+	left: 100px;
+	top:0px;
+	z-index: -10;
+	opacity: 0;
+	-webkit-transition: opacity .3s;
+	transition: opacity .3s;
+}
+.overlayVisible{
+	opacity: .9;
+	z-index: 10;
+}
+.blurOn{
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+.blurOff{
+	background-color: transparent;
+	color: black;
+	-webkit-filter: blur(0px);
+	-moz-filter: blur(0px);
+	-o-filter: blur(0px);
+	-ms-filter: blur(0px);
+	filter: blur(0px);
+	transition: blur .3s, opacity .3s;
+	opacity: 0;
+	z-index: 0;
+}
+
+#clock{
+	width: 100%;
+	text-align: center;
+	font-size: 32px;
+}
+
+#nextUp{
+	text-decoration: underline;
+	text-align: center;
+	font-size: 24px;
+}
+
+#nextMeds{
+	text-align: center;
+}
+
+.button{
+	background-color: #8ca3ff;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 5px;
+	color: #FAFAFA;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	transition: background 0.1s ease-in-out;
+	box-shadow: 0px 3px 3px 0px #7E7E7E;
+}
+.button:active{
+    position: relative;
+    top: 1px;
+}
+.button:hover{
+	background-color: #6666ff;
+	cursor: pointer;
+}
+.button, .button:hover, .button:active{
+	outline: 0 none;
+	text-decoration: none;
+}
+
+.large{
+	width: 100px;
+	height: 75px;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 75px;
+	vertical-align: middle;
+}
+.long{
+	padding: 5px;
+	float: left;
+	text-align: center;
+}
+.fill{
+	width: 60%;
+}
+
+.saved{
+	background-color: green;
+}
+.saved:hover{
+	background-color: green;
+}
+
+table{
+	width: 100%;
+	text-align: center;
+}
+
+#backArrow{
+	float: left;
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:10px solid #FAFAFA;
+	margin-right: 5px;
+}
+
+h1{
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin-top: -1em;
+	margin-bottom: 0;
+	pointer-events: none;
+}
+
+.form td{
+	padding: 5px;
+}
+.form td:nth-child(1){
+	text-align: right;
+	width: 50%;
+}
+.form td:nth-child(2){
+	text-align: left;
+}
+.form td:nth-child(2) input{
+	width: 70%;
+}
+.form td:nth-child(2) select{
+	width: 73%;
+}
+
+.people{
+	width: 80%;
+	margin-left: 10%;
+}
+.person{
+	width: 75px;
+	margin: 10px;
+	float: left;
+	text-align: center;
+	border-radius: 5px;
+}
+.person:hover{
+	cursor: pointer;
+	background-color: WhiteSmoke;
+}
+.person img{
+	width: 75px;
+	border-radius: 5px;
+}
+.person span{
+	width: 75px;
+	text-align: center;
+}
+.detail{
+	width: 150px;
+	float:right;
+	margin-right: 45px;
+}
+.detail:hover{
+	cursor: auto;
+	background-color: transparent;
+}
+.detail img{
+	width: 150px;
+}
+.detail span{
+	width: 150px;
+}
+
+.contactForm{
+	text-align: center;
+}
+.contactForm td{
+	width: 50%;
+	text-align: center;
+}
+
+.close{
+	-webkit-transform: scale(0,0);
+    transform: scale(0,0);
+}
+.open{
+	-webkit-transform: scale(1,1);
+    transform: scale(1,1);
+}
+
+#dialing{
+	width:480px;
+	height:320px;
+	position: absolute;
+	left:100px;
+	top:0;
+	box-shadow: 0px 0px 10px #888888 inset, 0px 0px 40px 10px #ffffff;
+	border: 1px solid #888888;
+	transition: -webkit-transform .3s, transform .3s;
+	background-color: black;
+	color: WhiteSmoke;
+}
+
+#dialing .button{
+	margin-left: 18%;
+}
+
+#dialing h2{
+	width: 100%;
+	text-align: center;
+}
+
+#dialing .person.detail{
+	float:none;
+	margin-left: 34%;
+}
+
+#homeButton{
+	position: absolute;
+	top:199px;
+	left: 852px;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+#homeButton:hover{
+	background-color: rgba(67,112,255, .5);
+}
+#powerButton{
+	position: absolute;
+	top:199px;
+	left: 704px;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+#powerButton:hover{
+	background-color: rgba(67,112,255, .5);
+}
+
+button{
+	position: relative;
+	left:1034px;
+}
+
+#video{
+	width: 100px;
+	height: 75px;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 75px;
+	vertical-align: middle;
+}
+
+.dismiss{
+	margin-left: 18%;
+}
