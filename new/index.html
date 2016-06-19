@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	<body class="demo-2">
+		<main>
+			<section class="interval">
+				<p class="interval__text">Isometric projection is a method for visually representing three-dimensional objects in two dimensions in technical and engineering drawings. <em>&mdash; <a href="https://en.wikipedia.org/wiki/Isometric_projection">Wikipedia</a></em></p>
+			</section>
+			<section class="section section--intro">
+				<div class="isolayer isolayer--deco1 isolayer--shadow">
+					<ul class="grid">
+						<li class="grid__item neutral">
+							<a class="grid__link" href="#">
+								<div class="layer"></div>
+								<div class="layer"></div>
+								<div class="layer desc"></div>
+								<span class="grid__title"></span>
+							</a>
+						</li>
+						<li class="grid__item design">
+							<a class="grid__link" href="#">
+								<div class="layer"></div>
+								<div class="layer"></div>
+								<div class="layer desc"><h1>Design Project 1</h1><p>This is the name of the project and a brief description</p></div>
+								<span class="grid__title">Design Project</span>
+							</a>
+						</li>
+						<li class="grid__item comm">
+							<a class="grid__link" href="#">
+								<div class="layer"></div>
+								<div class="layer"></div>
+								<div class="layer desc"><h1>Communication Project 1</h1><p>This is the name of the project and a brief description</p></div>
+								<span class="grid__title">Communication Project</span>
+							</a>
+						</li>
+						<li class="grid__item code">
+							<a class="grid__link" href="#">
+								<div class="layer"></div>
+								<div class="layer"></div>
+								<div class="layer desc"><h1>Code Project 1</h1><p>This is the name of the project and a brief description</p></div>
+								<span class="grid__title">Code Project</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/dynamics.min.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+		(function() {
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			new IsoGrid(document.querySelector('.isolayer--deco1'), {
+				transform : 'translateX(33vw) translateY(-340px) rotateX(45deg) rotateZ(45deg)',
+				stackItemsAnimation : {
+					properties : function(pos) {
+						return {
+							translateZ: (pos+1) * 30
+						};
+					},
+					options : function(pos, itemstotal) {
+						return {
+							type: dynamics.bezier,
+							duration: 500,
+							points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
+							delay: (itemstotal-pos-1)*40
+						};
+					}
+				}
+			});
+
+			$(".code").children().children(".layer").eq(2).css("background", "hsl(60, 60%, 70%)");
+			$(".code").children().children(".layer").eq(1).css("background", "hsl(60, 80%, 60%)");
+			$(".code").children().children(".layer").eq(0).css("background", "hsl(60, 100%, 50%)");
+
+			$(".design").children().children(".layer").eq(2).css("background", "hsl(300, 60%, 70%)");
+			$(".design").children().children(".layer").eq(1).css("background", "hsl(300, 80%, 60%)");
+			$(".design").children().children(".layer").eq(0).css("background", "hsl(300, 100%, 50%)");
+
+			$(".comm").children().children(".layer").eq(2).css("background", "hsl(180, 60%, 70%)");
+			$(".comm").children().children(".layer").eq(1).css("background", "hsl(180, 80%, 60%)");
+			$(".comm").children().children(".layer").eq(0).css("background", "hsl(180, 100%, 50%)");
+
+			$(".neutral").children().children(".layer").eq(2).css("background", "hsl(180, 0%, 70%)");
+			$(".neutral").children().children(".layer").eq(1).css("background", "hsl(180, 0%, 60%)");
+			$(".neutral").children().children(".layer").eq(0).css("background", "hsl(180, 0%, 50%)");			
+			
+		})();
+		</script>
+	</body>
+</html>

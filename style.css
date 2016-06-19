@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-	background-color: black;
+	background-color: grey;
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
 
 	transition: background-color 200ms ease-out;
@@ -29,7 +29,7 @@ body{
 	order: 2;
 	-webkit-flex-basis: auto;
 	flex-basis: auto;
-	color: whitesmoke;
+	color: lightgrey;
 	max-width: 0;
 	-webkit-backface-visibility: hidden;
 
@@ -77,16 +77,16 @@ a:visited{
 }
 
 p, li{
-	font-size: 2vw;
+	font-size: 1.2vw;
 	line-height: 1.2;
 }
 h1{
 	width: 100%;
-	text-align: center;
 	font-weight: bold;
 	font-family: Helvetica,Arial,sans-serif;
-	font-size: 3vw;
+	font-size: 2vw;
 	text-decoration: underline;
+	color:whitesmoke;
 }
 
 svg{
