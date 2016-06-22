@@ -1,109 +1,291 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 	<head>
-		<!-- Shamelessly taken from http://tympanus.net/codrops/2016/05/25/isometric-and-3d-grids/ -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	</head>
-	<body class="demo-2">
-		<main>
-			<section class="interval">
-				<p class="interval__text">Isometric projection is a method for visually representing three-dimensional objects in two dimensions in technical and engineering drawings. <em>&mdash; <a href="https://en.wikipedia.org/wiki/Isometric_projection">Wikipedia</a></em></p>
-			</section>
-			<section class="section section--intro">
-				<div class="isolayer isolayer--deco1 isolayer--shadow">
-					<ul class="grid">
-						<li class="grid__item neutral">
-							<a class="grid__link" href="#">
-								<div class="layer"></div>
-								<div class="layer"></div>
-								<div class="layer desc"></div>
-								<span class="grid__title"></span>
-							</a>
-						</li>
-						<li class="grid__item design">
-							<a class="grid__link" href="#">
-								<div class="layer"></div>
-								<div class="layer"></div>
-								<div class="layer desc"><h1>Design Project 1</h1><p>This is the name of the project and a brief description</p></div>
-								<span class="grid__title">Design Project</span>
-							</a>
-						</li>
-						<li class="grid__item comm">
-							<a class="grid__link" href="#">
-								<div class="layer"></div>
-								<div class="layer"></div>
-								<div class="layer desc"><h1>Communication Project 1</h1><p>This is the name of the project and a brief description</p></div>
-								<span class="grid__title">Communication Project</span>
-							</a>
-						</li>
-						<li class="grid__item code">
-							<a class="grid__link" href="#">
-								<div class="layer"></div>
-								<div class="layer"></div>
-								<div class="layer desc"><h1>Code Project 1</h1><p>This is the name of the project and a brief description</p></div>
-								<span class="grid__title">Code Project</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</main>
-
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/masonry.pkgd.min.js"></script>
-		<script src="js/dynamics.min.js"></script>
-		<script src="js/classie.js"></script>
-		<script src="js/main.js"></script>
-		<script>
-		(function() {
-			function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min + 1)) + min;
+		<script type="text/javascript" src="dynamics.min.js"></script>
+		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+		<style type="text/css">
+			body{
+				background-color: black;
+			}
+			p{
+				color: RGB(128, 128, 128);
+			}
+			.container{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.pane{
+				background-blend-mode: lighten;
+				width: 20vw;
+				height: 20vw;
+				transition: left 100ms, top 100ms, transform 100ms;
+			}
+			#one{
+				position: relative;
+				background-color:magenta;
+			}
+			#two{
+				position: relative;
+				background-color:yellow;
+			}
+			#three{
+				position: relative;
+				background-color:cyan;
 			}
 
-			new IsoGrid(document.querySelector('.isolayer--deco1'), {
-				transform : 'translateX(33vw) translateY(-340px) rotateX(45deg) rotateZ(45deg)',
-				stackItemsAnimation : {
-					properties : function(pos) {
-						return {
-							translateZ: (pos+1) * 30
-						};
-					},
-					options : function(pos, itemstotal) {
-						return {
-							type: dynamics.bezier,
-							duration: 500,
-							points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
-							delay: (itemstotal-pos-1)*40
-						};
-					}
-				}
-			});
+			.one-pre{
+				left:100vw;
+				top:100vh;
+			}
+			.one-post{
+				/*transform: matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -1440, -528, 0, 1);*/
+			}
+			#one:hover{
+				/*transform: matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -1480, -508, 0, 1);*/
+			}
 
-			$(".code").children().children(".layer").eq(2).css("background", "hsl(60, 60%, 70%)");
-			$(".code").children().children(".layer").eq(1).css("background", "hsl(60, 80%, 60%)");
-			$(".code").children().children(".layer").eq(0).css("background", "hsl(60, 100%, 50%)");
+			.two-pre{
+				top:100vh;
+			}
+			.two-post{
+				top:0;
+			}
 
-			$(".design").children().children(".layer").eq(2).css("background", "hsl(300, 60%, 70%)");
-			$(".design").children().children(".layer").eq(1).css("background", "hsl(300, 80%, 60%)");
-			$(".design").children().children(".layer").eq(0).css("background", "hsl(300, 100%, 50%)");
+			.three-pre{
+				left:-100vw;
+				top:100vh;
+			}
+			.three-post{
+				left:0;
+				top:0;
+			}
 
-			$(".comm").children().children(".layer").eq(2).css("background", "hsl(180, 60%, 70%)");
-			$(".comm").children().children(".layer").eq(1).css("background", "hsl(180, 80%, 60%)");
-			$(".comm").children().children(".layer").eq(0).css("background", "hsl(180, 100%, 50%)");
 
-			$(".neutral").children().children(".layer").eq(2).css("background", "hsl(180, 0%, 70%)");
-			$(".neutral").children().children(".layer").eq(1).css("background", "hsl(180, 0%, 60%)");
-			$(".neutral").children().children(".layer").eq(0).css("background", "hsl(180, 0%, 50%)");			
-			
-		})();
-		</script>
+
+			.container2{
+				width: 20vw;
+				height: 20vw;
+				min-width: 200px;
+				min-height: 200px;
+				position: relative;
+			}
+			.pane2{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: top 100ms, left 100ms;
+			}
+			.first{
+				opacity: .9;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: scroll;
+				text-align: center;
+			}
+			.first p, .first h1{
+				margin: .5em;
+				color: RGB(64, 64, 64);
+			}
+			.first h1{
+				text-decoration: underline;
+				margin-top: .67em;
+				margin-bottom: .67em;
+			}
+			.second{
+				opacity: .9;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.third{
+				opacity: .9;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.fourth{
+				opacity: .9;
+			}
+			.container2:hover .first{
+				top: -3vw;
+				left: -3vw;
+			}
+			.container2:hover .second{
+				top: -2vw;
+				left: -2vw;
+			}
+			.container2:hover .third{
+				top: -1vw;
+				left: -1vw;
+			}
+
+			.design{
+				background-color: magenta;
+			}
+			.design.first{
+				background-color: hsl(300, 100%, 65%);
+			}
+			.design.second{
+				background-color: hsl(300, 100%, 60%);
+			}
+			.design.third{
+				background-color: hsl(300, 100%, 50%);
+			}
+			.container2:hover .design.fourth{
+				background-color: hsl(300, 100%, 20%);
+				-webkit-filter: blur(10px);
+				-ms-filter: blur(10px);
+				-moz-filter: blur(10px);
+				filter: blur(10px);
+			}
+
+			.code{
+				background-color: yellow;
+			}
+			.code.first{
+				background-color: hsl(60, 90%, 65%);
+			}
+			.code.second{
+				background-color: hsl(60, 95%, 60%);
+			}
+			.code.third{
+				background-color: hsl(60, 100%, 50%);
+			}
+			.container2:hover .code.fourth{
+				background-color: hsl(60, 100%, 20%);
+				-webkit-filter: blur(10px);
+				-ms-filter: blur(10px);
+				-moz-filter: blur(10px);
+				filter: blur(10px);
+			}
+
+			.comm{
+				background-color: cyan;
+			}
+			.comm.first{
+				background-color: hsl(180, 90%, 70%);
+			}
+			.comm.second{
+				background-color: hsl(180, 95%, 60%);
+			}
+			.comm.third{
+				background-color: hsl(180, 100%, 50%);
+			}
+			.container2:hover .comm.fourth{
+				background-color: hsl(180, 100%, 20%);
+				-webkit-filter: blur(10px);
+				-ms-filter: blur(10px);
+				-moz-filter: blur(10px);
+				filter: blur(10px);
+			}
+		</style>
+	</head>
+	<body>
+		<p>Bitters crucifix gastropub four dollar toast banh mi, drinking vinegar ugh venmo. Fashion axe twee vice meh swag, shabby chic forage lumbersexual art party aesthetic chicharrones next level locavore pour-over waistcoat. Pinterest PBR&B neutra asymmetrical, chambray chartreuse selvage. Fanny pack dreamcatcher normcore lumbersexual listicle, ethical roof party organic hammock waistcoat church-key bespoke raw denim. Bicycle rights post-ironic fashion axe, leggings meh forage beard cred keytar pug cold-pressed butcher distillery four dollar toast. Green juice affogato artisan, listicle vinyl flannel ramps readymade 90's direct trade messenger bag heirloom typewriter butcher pinterest. VHS asymmetrical gochujang jean shorts tacos.</p>
+		<div class="container">
+			<div class="pane one-pre" id="one"></div>
+			<div class="pane two-pre" id="two"></div>
+			<div class="pane three-pre" id="three"></div>
+		</div>
+		<p>Put a bird on it literally beard, franzen photo booth biodiesel ramps health goth deep v sustainable 8-bit venmo fap crucifix. Taxidermy cred humblebrag, neutra forage shoreditch vice. Pour-over bushwick hashtag affogato lo-fi. Chillwave echo park direct trade street art, hoodie lomo post-ironic fap brunch chicharrones meditation fashion axe migas. Asymmetrical aesthetic ugh, ramps gentrify cornhole pitchfork biodiesel crucifix. Irony gluten-free affogato whatever neutra organic. Ramps literally kitsch, pinterest letterpress everyday carry tumblr irony stumptown.</p>
+		<div class="container">
+			<div class="container2">
+				<div class="pane2 fourth design"></div>
+				<div class="pane2 third design"></div>
+				<div class="pane2 second design"></div>
+				<div class="pane2 first design">
+					<h1>Design Project Title</h1>
+					<p>This is a description of this project, which is a design project.</p>
+				</div>
+			</div>
+			<div class="container2">
+				<div class="pane2 fourth comm"></div>
+				<div class="pane2 third comm"></div>
+				<div class="pane2 second comm"></div>
+				<div class="pane2 first comm">
+					<h1>Communication Project Title</h1>
+					<p>This is a description of this project, which is a communication project.</p>
+				</div>
+			</div>
+			<div class="container2">
+				<div class="pane2 fourth code"></div>
+				<div class="pane2 third code"></div>
+				<div class="pane2 second code"></div>
+				<div class="pane2 first code">
+					<h1>Code Project Title</h1>
+					<p>This is a description of this project, which is a coding project.</p>
+				</div>
+			</div>
+		</div>
 	</body>
+	<script type="text/javascript">
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		var dur = 1000;
+		var rot = 360.0*1.5;
+		var type = dynamics.easeIn;
+		var friction = 150;
+		var highlightDistance = 20;
+
+		$("#one").on("mouseover touchstart", function(){
+			$("#one").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -"+(width+highlightDistance)+", -"+(height-highlightDistance)+", 0, 1)");
+		});
+		$("#one").on("mouseout touchend", function(){
+			//make it work right for touch
+			$("#one").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -"+width+", -"+height+", 0, 1)");
+		});
+		$("#two").on("mouseover touchstart", function(){
+			$("#two").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, -"+(height-highlightDistance)+", 0, 1)");
+		});
+		$("#two").on("mouseout touchend", function(){
+			$("#two").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, -"+height+", 0, 1)");
+		});
+		$("#three").on("mouseover touchstart", function(){
+			$("#three").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, "+(width+highlightDistance)+", -"+(height-highlightDistance)+", 0, 1)");
+		});
+		$("#three").on("mouseout touchend", function(){
+			$("#three").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, "+width+", -"+height+", 0, 1)");
+		});
+
+		dynamics.animate(document.querySelector('#one'), {
+		  translateX: -width,
+		  translateY: -height,
+		  rotateZ: rot
+		}, {
+		  type: type,
+		  friction: friction,
+		  duration: dur,
+		  delay: (Math.random()*500.0)
+		});
+
+		dynamics.animate(document.querySelector('#two'), {
+		  translateY: -height,
+		  rotateZ: rot
+		}, {
+		  type: type,
+		  friction: friction,
+		  duration: dur,
+		  delay: (Math.random()*500.0)
+		});
+
+		dynamics.animate(document.querySelector('#three'), {
+		  translateX: width,
+		  translateY: -height,
+		  rotateZ: rot
+		}, {
+		  type: type,
+		  friction: friction,
+		  duration: dur,
+		  delay: (Math.random()*500.0)
+		});
+	</script>
 </html>
