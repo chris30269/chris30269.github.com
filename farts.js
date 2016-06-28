@@ -5,6 +5,66 @@ $(function(){
 	var communication = $(".communication").not(".code, .design");
 	var me = $(".communication.code.design");
 
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+	var dur = 1000;
+	var rot = 360.0*1.5;
+	// var type = dynamics.easeIn;
+	var friction = 150;
+	var highlightDistance = 20;
+
+	// $("#one").on("mouseover touchstart", function(){
+	// 	$("#one").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -"+(width+highlightDistance)+", -"+(height-highlightDistance)+", 0, 1)");
+	// });
+	// $("#one").on("mouseout touchend", function(){
+	// 	//make it work right for touch
+	// 	$("#one").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -"+width+", -"+height+", 0, 1)");
+	// });
+	// $("#two").on("mouseover touchstart", function(){
+	// 	$("#two").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, -"+(height-highlightDistance)+", 0, 1)");
+	// });
+	// $("#two").on("mouseout touchend", function(){
+	// 	$("#two").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, -"+height+", 0, 1)");
+	// });
+	// $("#three").on("mouseover touchstart", function(){
+	// 	$("#three").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, "+(width+highlightDistance)+", -"+(height-highlightDistance)+", 0, 1)");
+	// });
+	// $("#three").on("mouseout touchend", function(){
+	// 	$("#three").css("transform", "matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, "+width+", -"+height+", 0, 1)");
+	// });
+
+	// dynamics.animate(document.querySelector('#one'), {
+	//   translateX: -width,
+	//   translateY: -height,
+	//   rotateZ: rot
+	// }, {
+	//   type: type,
+	//   friction: friction,
+	//   duration: dur,
+	//   delay: (Math.random()*500.0)
+	// });
+
+	// dynamics.animate(document.querySelector('#two'), {
+	//   translateY: -height,
+	//   rotateZ: rot
+	// }, {
+	//   type: type,
+	//   friction: friction,
+	//   duration: dur,
+	//   delay: (Math.random()*500.0)
+	// });
+
+	// dynamics.animate(document.querySelector('#three'), {
+	//   translateX: width,
+	//   translateY: -height,
+	//   rotateZ: rot
+	// }, {
+	//   type: type,
+	//   friction: friction,
+	//   duration: dur,
+	//   delay: (Math.random()*500.0)
+	// });
+
 	code.on("mouseenter touchstart", function(){
 		hover("code");
 	});
@@ -37,7 +97,7 @@ $(function(){
 	});
 
 	code.on("mouseup touchend", function(){
-		$(".content").css("max-width", "75%");
+		$("svg").css("max-height", "50vh");
 		$("#designContent").css("opacity", 0);
 		$("#communicationContent").css("opacity", 0);
 		$("#codeContent").css("opacity", 0);
@@ -48,7 +108,7 @@ $(function(){
 		setTimeout(function(){$("#codeContent").css("opacity", 1);unHoverCode();rotateLogo(55);}, 500);
 	});
 	design.on("mouseup touchend", function(){
-		$(".content").css("max-width", "75%");
+		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "#EC008C");
 		$("#designContent").css("opacity", 0);
 		$("#communicationContent").css("opacity", 0);
@@ -59,7 +119,7 @@ $(function(){
 		setTimeout(function(){$("#designContent").css("opacity", 1);unHoverDesign();rotateLogo(305);}, 500);
 	});
 	communication.on("mouseup touchend", function(){
-		$(".content").css("max-width", "75%");
+		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "#00AEEF");
 		$("#designContent").css("opacity", 0);
 		$("#communicationContent").css("opacity", 0);
@@ -70,7 +130,7 @@ $(function(){
 		setTimeout(function(){$("#communicationContent").css("opacity", 1);unHoverCommunication();rotateLogo(0);}, 500);
 	});
 	me.add($(".name")).on("mouseup touchend", function(){
-		$(".content").css("max-width", "75%");
+		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "rgb(201,201,198)");
 		$("#designContent").css("opacity", 0);
 		$("#communicationContent").css("opacity", 0);
@@ -164,7 +224,7 @@ function unHoverMe(){
 }
 
 function rotateLogo(deg){
-	$("svg").attr("style", "transform-origin: 50% 50%; -webkit-transform:rotate("+deg+"deg);transform:rotate("+deg+"deg);");
-	$(".name").css("transform", "rotate(-"+deg+"deg)");
+	$("svg").attr("style", "transform-origin: 50% 50%;transform:rotate("+deg+"deg);max-height:50vh;");
+	// $(".name").css("transform", "rotate(-"+deg+"deg)");
 	$(".name").css("transform-origin", "50% 50%");
 }
