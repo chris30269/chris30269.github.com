@@ -97,40 +97,13 @@ $(function(){
 	});
 
 	code.on("mouseup touchend", function(){
-		$("svg").css("max-height", "50vh");
-		$("#designContent").css("opacity", 0).css("display", "none");
-		$("#communicationContent").css("opacity", 0).css("display", "none");
-		$("#codeContent").css("opacity", 0).css("display", "none");
-		$("#meContent").css("opacity", 0).css("display", "none");
-		$("body").css("background-color", "#FFF200");
-		$(".projectContent").css("opacity", 0).css("display", "none");
-
-		setTimeout(function(){$("#codeContent").css("display", "block");$("#designContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
-		setTimeout(function(){$("#codeContent").css("opacity", 1);unHoverCode();rotateLogo(55);}, 500);
+		loadCode();
 	});
 	design.on("mouseup touchend", function(){
-		$("svg").css("max-height", "50vh");
-		$("body").css("background-color", "#EC008C");
-		$("#designContent").css("opacity", 0).css("display", "none");
-		$("#communicationContent").css("opacity", 0).css("display", "none");
-		$("#codeContent").css("opacity", 0).css("display", "none");
-		$("#meContent").css("opacity", 0).css("display", "none");
-		$(".projectContent").css("opacity", 0).css("display", "none");
-
-		setTimeout(function(){$("#designContent").css("display", "block");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
-		setTimeout(function(){$("#designContent").css("opacity", 1);unHoverDesign();rotateLogo(305);}, 500);
+		loadDesign();
 	});
 	communication.on("mouseup touchend", function(){
-		$("svg").css("max-height", "50vh");
-		$("body").css("background-color", "#00AEEF");
-		$("#designContent").css("opacity", 0).css("display", "none");
-		$("#communicationContent").css("opacity", 0).css("display", "none");
-		$("#codeContent").css("opacity", 0).css("display", "none");
-		$("#meContent").css("opacity", 0).css("display", "none");
-		$(".projectContent").css("opacity", 0).css("display", "none");
-
-		setTimeout(function(){$("#communicationContent").css("display", "block");$("#designContent").css("display", "none");$("#codeContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
-		setTimeout(function(){$("#communicationContent").css("opacity", 1);unHoverCommunication();rotateLogo(0);}, 500);
+		loadComm();
 	});
 	me.add($(".name")).on("mouseup touchend", function(){
 		$("svg").css("max-height", "50vh");
@@ -146,10 +119,52 @@ $(function(){
 	});
 
 	$(".projectButton").on("click", function(){
-		$("body").css("background-color", "#EC008C");
+		if($(this).data("type") == "design") color = "#EC008C";
+		else if($(this).data("type") == "code") color = "#FFF200";
+		else if($(this).data("type") == "comm") color = "#00AEEF";
+		$("body").css("background-color", color);
 		var project = $(this).data("project");
 		setTimeout(function(){$("#designContent").css("display", "none").css("opacity", "0");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");$("body").css("background-color", "black");}, 300);
 		setTimeout(function(){$("#"+project+"").css("display", "block").css("opacity", 1);}, 500, project);
+	});
+
+	$(".designLink").on("mouseenter touchstart", function(){
+		$("body").css("background-color", "#00A651");
+		$(this).css("color", "#EC008C");
+	});
+	$(".designLink").on("mouseout", function(){
+		$("body").css("background-color", "black");
+		$(this).css("color", "");
+	});
+	$(".designLink").on("mouseup touchend", function(e){
+		e.preventDefault();
+		loadDesign();
+	});
+
+	$(".codeLink").on("mouseenter touchstart", function(){
+		$("body").css("background-color", "#2E3192");
+		$(this).css("color", "#FFF200");
+	});
+	$(".codeLink").on("mouseout", function(){
+		$("body").css("background-color", "black");
+		$(this).css("color", "");
+	});
+	$(".codeLink").on("mouseup touchend", function(e){
+		e.preventDefault();
+		loadCode();
+	});
+
+	$(".commLink").on("mouseenter touchstart", function(){
+		$("body").css("background-color", "#ED1C24");
+		$(this).css("color", "#00AEEF");
+	});
+	$(".commLink").on("mouseout", function(){
+		$("body").css("background-color", "black");
+		$(this).css("color", "");
+	});
+	$(".commLink").on("mouseup touchend", function(e){
+		e.preventDefault();
+		loadComm();
 	});
 
 	//don't put my email on blast
@@ -235,7 +250,47 @@ function unHoverMe(){
 }
 
 function rotateLogo(deg){
+	deg = 360+deg;
 	$("svg").attr("style", "transform-origin: 50% 50%;transform:rotate("+deg+"deg);max-height:50vh;");
 	// $(".name").css("transform", "rotate(-"+deg+"deg)");
-	$(".name").css("transform-origin", "50% 50%");
+	// $(".name").css("transform-origin", "50% 50%");
+}
+
+function loadDesign(){
+	$("svg").css("max-height", "50vh");
+	$("body").css("background-color", "#EC008C");
+	$("#designContent").css("opacity", 0).css("display", "none");
+	$("#communicationContent").css("opacity", 0).css("display", "none");
+	$("#codeContent").css("opacity", 0).css("display", "none");
+	$("#meContent").css("opacity", 0).css("display", "none");
+	$(".projectContent").css("opacity", 0).css("display", "none");
+
+	setTimeout(function(){$("#designContent").css("display", "block");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
+	setTimeout(function(){$("#designContent").css("opacity", 1);unHoverDesign();rotateLogo(305);}, 500);
+}
+
+function loadCode(){
+	$("svg").css("max-height", "50vh");
+	$("#designContent").css("opacity", 0).css("display", "none");
+	$("#communicationContent").css("opacity", 0).css("display", "none");
+	$("#codeContent").css("opacity", 0).css("display", "none");
+	$("#meContent").css("opacity", 0).css("display", "none");
+	$("body").css("background-color", "#FFF200");
+	$(".projectContent").css("opacity", 0).css("display", "none");
+
+	setTimeout(function(){$("#codeContent").css("display", "block");$("#designContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
+	setTimeout(function(){$("#codeContent").css("opacity", 1);unHoverCode();rotateLogo(55);}, 500);
+}
+
+function loadComm(){
+	$("svg").css("max-height", "50vh");
+	$("body").css("background-color", "#00AEEF");
+	$("#designContent").css("opacity", 0).css("display", "none");
+	$("#communicationContent").css("opacity", 0).css("display", "none");
+	$("#codeContent").css("opacity", 0).css("display", "none");
+	$("#meContent").css("opacity", 0).css("display", "none");
+	$(".projectContent").css("opacity", 0).css("display", "none");
+
+	setTimeout(function(){$("#communicationContent").css("display", "block");$("#designContent").css("display", "none");$("#codeContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
+	setTimeout(function(){$("#communicationContent").css("opacity", 1);unHoverCommunication();rotateLogo(0);}, 500);
 }

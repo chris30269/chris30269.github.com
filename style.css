@@ -116,6 +116,8 @@ polygon, g{
 	min-width: 200px;
 	min-height: 200px;
 	position: relative;
+	float: left;
+	margin: 2vw;
 }
 .pane{
 	width: 100%;
@@ -132,10 +134,11 @@ polygon, g{
 	top: 0;
 	left: 0;
 	overflow: scroll;
+	color: RGB(64, 64, 64);
 }
 .first p, .first h1{
-	/*margin: .5em;*/
 	color: RGB(64, 64, 64);
+	/*margin: .5em;*/
 	text-align: center;
 }
 .first h1{
@@ -158,6 +161,10 @@ polygon, g{
 	left: 0;
 }
 .fourth{
+	-webkit-filter: blur(15px);
+	-ms-filter: blur(15px);
+	-moz-filter: blur(15px);
+	filter: blur(15px);
 }
 .projectButton:hover .first{
 	top: -3vw;
@@ -183,10 +190,32 @@ polygon, g{
 }
 .designButton.fourth{
 	background-color: hsl(324, 100%, 16.3%);
-	-webkit-filter: blur(15px);
-	-ms-filter: blur(15px);
-	-moz-filter: blur(15px);
-	filter: blur(15px);
+}
+
+.codeButton.first{
+	background-color: hsl(57, 100%, 50%);
+}
+.codeButton.second{
+	background-color: hsl(57, 100%, 40%);
+}
+.codeButton.third{
+	background-color: hsl(57, 100%, 30%);
+}
+.codeButton.fourth{
+	background-color: hsl(57, 100%, 20%);
+}
+
+.commButton.first{
+	background-color: hsl(196, 100%, 46.9%);
+}
+.commButton.second{
+	background-color: hsl(196, 100%, 36.9%);
+}
+.commButton.third{
+	background-color: hsl(196, 100%, 26.9%);
+}
+.commButton.fourth{
+	background-color: hsl(196, 100%, 16.9%);
 }
 
 /* phone */
