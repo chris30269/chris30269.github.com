@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-	background-color: grey;
+	background-color: black;
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
 
 	transition: background-color 200ms ease-out;
@@ -102,6 +102,12 @@ polygon, g{
 
 .projectContent{
 	display: none;
+	opacity: 0;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+
+	transition: opacity ease-out 200ms;
 }
 
 .projectButton{
@@ -145,7 +151,6 @@ polygon, g{
 	left: 0;
 }
 .third{
-
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -157,6 +162,7 @@ polygon, g{
 .projectButton:hover .first{
 	top: -3vw;
 	left: -3vw;
+	cursor: pointer;
 }
 .projectButton:hover .second{
 	top: -2vw;
@@ -177,10 +183,10 @@ polygon, g{
 }
 .designButton.fourth{
 	background-color: hsl(324, 100%, 16.3%);
-	-webkit-filter: blur(10px);
-	-ms-filter: blur(10px);
-	-moz-filter: blur(10px);
-	filter: blur(10px);
+	-webkit-filter: blur(15px);
+	-ms-filter: blur(15px);
+	-moz-filter: blur(15px);
+	filter: blur(15px);
 }
 
 /* phone */

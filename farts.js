@@ -98,11 +98,12 @@ $(function(){
 
 	code.on("mouseup touchend", function(){
 		$("svg").css("max-height", "50vh");
-		$("#designContent").css("opacity", 0);
-		$("#communicationContent").css("opacity", 0);
-		$("#codeContent").css("opacity", 0);
-		$("#meContent").css("opacity", 0);
+		$("#designContent").css("opacity", 0).css("display", "none");
+		$("#communicationContent").css("opacity", 0).css("display", "none");
+		$("#codeContent").css("opacity", 0).css("display", "none");
+		$("#meContent").css("opacity", 0).css("display", "none");
 		$("body").css("background-color", "#FFF200");
+		$(".projectContent").css("opacity", 0).css("display", "none");
 
 		setTimeout(function(){$("#codeContent").css("display", "block");$("#designContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
 		setTimeout(function(){$("#codeContent").css("opacity", 1);unHoverCode();rotateLogo(55);}, 500);
@@ -110,10 +111,11 @@ $(function(){
 	design.on("mouseup touchend", function(){
 		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "#EC008C");
-		$("#designContent").css("opacity", 0);
-		$("#communicationContent").css("opacity", 0);
-		$("#codeContent").css("opacity", 0);
-		$("#meContent").css("opacity", 0);
+		$("#designContent").css("opacity", 0).css("display", "none");
+		$("#communicationContent").css("opacity", 0).css("display", "none");
+		$("#codeContent").css("opacity", 0).css("display", "none");
+		$("#meContent").css("opacity", 0).css("display", "none");
+		$(".projectContent").css("opacity", 0).css("display", "none");
 
 		setTimeout(function(){$("#designContent").css("display", "block");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
 		setTimeout(function(){$("#designContent").css("opacity", 1);unHoverDesign();rotateLogo(305);}, 500);
@@ -121,10 +123,11 @@ $(function(){
 	communication.on("mouseup touchend", function(){
 		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "#00AEEF");
-		$("#designContent").css("opacity", 0);
-		$("#communicationContent").css("opacity", 0);
-		$("#codeContent").css("opacity", 0);
-		$("#meContent").css("opacity", 0);
+		$("#designContent").css("opacity", 0).css("display", "none");
+		$("#communicationContent").css("opacity", 0).css("display", "none");
+		$("#codeContent").css("opacity", 0).css("display", "none");
+		$("#meContent").css("opacity", 0).css("display", "none");
+		$(".projectContent").css("opacity", 0).css("display", "none");
 
 		setTimeout(function(){$("#communicationContent").css("display", "block");$("#designContent").css("display", "none");$("#codeContent").css("display", "none");$("#meContent").css("display", "none");}, 300);
 		setTimeout(function(){$("#communicationContent").css("opacity", 1);unHoverCommunication();rotateLogo(0);}, 500);
@@ -132,13 +135,21 @@ $(function(){
 	me.add($(".name")).on("mouseup touchend", function(){
 		$("svg").css("max-height", "50vh");
 		$("body").css("background-color", "rgb(201,201,198)");
-		$("#designContent").css("opacity", 0);
-		$("#communicationContent").css("opacity", 0);
-		$("#codeContent").css("opacity", 0);
-		$("#meContent").css("opacity", 0);
+		$("#designContent").css("opacity", 0).css("display", "none");
+		$("#communicationContent").css("opacity", 0).css("display", "none");
+		$("#codeContent").css("opacity", 0).css("display", "none");
+		$("#meContent").css("opacity", 0).css("display", "none");
+		$(".projectContent").css("opacity", 0).css("display", "none");
 
 		setTimeout(function(){$("#meContent").css("display", "block");$("#designContent").css("display", "none");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");}, 300);
 		setTimeout(function(){$("#meContent").css("opacity", 1);unHoverMe();rotateLogo(0);}, 500);
+	});
+
+	$(".projectButton").on("click", function(){
+		$("body").css("background-color", "#EC008C");
+		var project = $(this).data("project");
+		setTimeout(function(){$("#designContent").css("display", "none").css("opacity", "0");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");$("body").css("background-color", "black");}, 300);
+		setTimeout(function(){$("#"+project+"").css("display", "block").css("opacity", 1);}, 500, project);
 	});
 
 	//don't put my email on blast
