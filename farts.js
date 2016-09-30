@@ -1,3 +1,7 @@
+var designBackground = "hsl(324, 100%, 36.3%)";
+var codeBackground = "hsl(57, 100%, 30%)";
+var commBackground = "hsl(196, 100%, 36.9%)";
+
 $(function(){
 	//console.log("hi");
 	var code = $(".code").not(".communication, .design");
@@ -119,9 +123,9 @@ $(function(){
 	});
 
 	$(".projectButton").on("click", function(){
-		if($(this).data("type") == "design") color = "#EC008C";
-		else if($(this).data("type") == "code") color = "#FFF200";
-		else if($(this).data("type") == "comm") color = "#00AEEF";
+		if($(this).data("type") == "design") color = designBackground;
+		else if($(this).data("type") == "code") color = codeBackground;
+		else if($(this).data("type") == "comm") color = commBackground;
 		$("body").css("background-color", color);
 		var project = $(this).data("project");
 		setTimeout(function(){$("#designContent").css("display", "none").css("opacity", "0");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");$("body").css("background-color", "black");}, 300);
@@ -129,7 +133,7 @@ $(function(){
 	});
 
 	$(".designLink").on("mouseenter touchstart", function(){
-		$("body").css("background-color", "#00A651");
+		$("body").css("background-color", designBackground);
 		$(this).css("color", "#EC008C");
 	});
 	$(".designLink").on("mouseout", function(){
@@ -142,7 +146,7 @@ $(function(){
 	});
 
 	$(".codeLink").on("mouseenter touchstart", function(){
-		$("body").css("background-color", "#2E3192");
+		$("body").css("background-color", codeBackground);
 		$(this).css("color", "#FFF200");
 	});
 	$(".codeLink").on("mouseout", function(){
@@ -155,7 +159,7 @@ $(function(){
 	});
 
 	$(".commLink").on("mouseenter touchstart", function(){
-		$("body").css("background-color", "#ED1C24");
+		$("body").css("background-color", commBackground);
 		$(this).css("color", "#00AEEF");
 	});
 	$(".commLink").on("mouseout", function(){
@@ -169,14 +173,14 @@ $(function(){
 
 	//don't put my email on blast
 	var poop = 12/4;
-	var boogers = 'cernst'+poop;
-	$("#lookAtMe").attr("href", "mailto:"+boogers+"@gatech.edu?subject=I%20want%20to%20give%20you%20money").html(boogers+"@gatech.edu");
+	var boogers = 'chris'+poop;
+	$("#lookAtMe").attr("href", "mailto:"+boogers+"@gatech.edu?subject=I%20want%20to%20give%20you%20money").html(boogers+"@chrisernst.me");
 });
 
 function hover(which){
 	var color="";
 	if(which == "communication"){
-		color = "#ED1C24";
+		color = commBackground;
 		$(".design").not(".communication, .code").css("opacity", "0");
 		$(".code").not(".communication, .design").css("opacity", "0");
 		$(".design.code").not(".communication").css("opacity", "0");
@@ -184,7 +188,7 @@ function hover(which){
 		$(".name").css("opacity", 0);
 	}
 	else if(which == "design"){
-		color = "#00A651";
+		color = designBackground;
 		$(".communication").not(".design, .code").css("opacity", "0");
 		$(".code").not(".design, .communication").css("opacity", "0");
 		$(".communication.code").not(".design").css("opacity", "0");
@@ -192,7 +196,7 @@ function hover(which){
 		$(".name").css("opacity", 0);
 	}
 	else if(which == "code"){
-		color = "#2E3192";
+		color = codeBackground;
 		$(".communication").not(".design, .code").css("opacity", "0");
 		$(".design").not(".code, .communication").css("opacity", "0");
 		$(".communication.design").not(".code").css("opacity", "0");
