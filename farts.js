@@ -173,8 +173,8 @@ $(function(){
 
 	//don't put my email on blast
 	var poop = 12/4;
-	var boogers = 'chris'+poop;
-	$("#lookAtMe").attr("href", "mailto:"+boogers+"@gatech.edu?subject=I%20want%20to%20give%20you%20money").html(boogers+"@chrisernst.me");
+	var boogers = 'chris'+(poop-3);
+	$("#lookAtMe").attr("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20give%20you%20money").html(boogers.substr(0,5)+"@chrisernst.me");
 });
 
 function hover(which){
