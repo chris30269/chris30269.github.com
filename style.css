@@ -110,7 +110,16 @@ polygon, g{
 
 	transition: opacity ease-out 200ms;
 }
-
+.projectLink{
+	min-width: 0!important;
+    min-height: 0!important;
+    max-width: 100px;
+    max-height: 100px;
+    word-break: break-all;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    float: none!important;
+}
 .projectButton{
 	width: 20vw;
 	height: 20vw;

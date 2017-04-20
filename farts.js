@@ -128,7 +128,7 @@ $(function(){
 		else if($(this).data("type") == "comm") color = commBackground;
 		$("body").css("background-color", color);
 		var project = $(this).data("project");
-		setTimeout(function(){$("#designContent").css("display", "none").css("opacity", "0");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");$("body").css("background-color", "black");}, 300);
+		setTimeout(function(){$("#designContent").css("display", "none").css("opacity", "0");$("#codeContent").css("display", "none");$("#communicationContent").css("display", "none");$("#meContent").css("display", "none");$(".projectContent").css("display", "none");$("body").css("background-color", "black");}, 300);
 		setTimeout(function(){$("#"+project+"").css("display", "block").css("opacity", 1);}, 500, project);
 	});
 
