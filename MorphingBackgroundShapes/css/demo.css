@@ -268,8 +268,8 @@ a:focus {
 
 /*copy*/
 .content--layout-copy {
-	grid-template-areas:	"... title title title"
-							"copy copy copy copy"
+	grid-template-areas:	"... ... ... ..."
+							"... title title title"
 							"copy copy copy copy";
 }
 .content-wrap .copy{
@@ -277,7 +277,7 @@ a:focus {
 	grid-column: 1 / 5;
 	/*grid-row: 4;*/
 	width: 60%;
-
+	pointer-events: all;
 }
 
 /* layout-2 */
