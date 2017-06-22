@@ -219,6 +219,7 @@ a:focus {
 	z-index: 10;
 	padding: 0 1em;
 	cursor: default;
+	color: black;
 }
 
 .content__img,
@@ -264,6 +265,20 @@ a:focus {
 }
 
 /* Different layouts */
+
+/*copy*/
+.content--layout-copy {
+	grid-template-areas:	"... title title title"
+							"copy copy copy copy"
+							"copy copy copy copy";
+}
+.content-wrap .copy{
+	grid-area: copy;
+	grid-column: 1 / 5;
+	/*grid-row: 4;*/
+	width: 60%;
+
+}
 
 /* layout-2 */
 .content--layout-2 {

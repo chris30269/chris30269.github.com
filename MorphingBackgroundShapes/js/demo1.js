@@ -203,6 +203,7 @@
 			rotate: -20,
 			tx: 0,
 			ty: -50,
+			background: "rgb(128,128,128)",
 			fill: {
 				color: 'darkgrey',
 				duration: 500,
