@@ -23,8 +23,20 @@
 				s.parentNode.removeChild(s);
 				return support;
 			}
-			if (!supportsCssVars()) alert('Please view this demo in a modern browser that supports CSS Variables.')
+			if (!supportsCssVars()) alert('Please view this in a modern browser that supports CSS Variables.')
 		</script>
+		<style type="text/css">
+			body{
+				background-color: hsl(57, 100%, 30%);
+				color:black;
+			}
+			.morph{
+				fill: yellow;
+			}
+			.decoshape{
+				fill:yellow;
+			}
+		</style>
 	</head>
 	<body class="demo-1 loading">
 		<svg class="hidden">
@@ -41,55 +53,59 @@
 				<path d="M 6.144,74.1 C 20.4,107.4 70.13,94.33 94.22,95.74 121.3,97.41 130.8,101.1 154.7,99.38 178.6,97.72 201.9,78.95 199.4,46.86 197.1,14.96 174.9,4.781 161.4,1.827 147.9,-1.128 119.8,8.284 105.6,8.766 85.34,9.449 81.91,7.628 51.08,2.334 17.26,-3.482 -8.105,40.84 6.144,74.1 Z" />
 			</symbol>
 		</svg>
-		<main>
+		<main style="overflow:scroll;">
 			<div class="morph-wrap">
 				<svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
 					<path d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"/>
 				</svg>
 			</div>
 			<div class="content content--fixed">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<svg class="decoshape" viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="none">
+							<path d="M 10.45,74.41 C 39.4,110.8 72.59,67.27 95.98,68.68 122.3,70.35 131.5,101.4 154.7,99.69 177.9,98.03 200.5,79.26 198.1,47.17 195.9,15.27 174.6,-0.3279 151.8,0.9941 128.6,2.581 126,16.86 107,22.76 88.26,28.67 88.87,12.36 60.37,1.787 31.79,-8.877 -18.61,37.92 10.45,74.41 Z" />
+						</svg>
+						<a class="codrops-icon codrops-icon--prev" href="index.html" title="Home"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="index.html" title="Back to homepage" style="text-decoration:none;">back</a>
+					</div>
+				</header>
 				<div class="deco deco--title"><a href="mailto:chris@chrisernst.me">Email Me</a></div>
 			</div>
-			<div class="content-wrap">
-				<div class="content content--layout content--layout-1">
-					<img class="content__img" src="img/1.jpg" alt="Some image" />
-					<h3 class="content__title" style="text-shadow:0px 0px 20px hsl(324, 100%, 36.3%)">design</h3>
-					<p class="content__author">Design it</p>
-					<p class="content__desc">Design&<br>Prototype&<br>Evaluate&<br>Design</p>
-					<a href="design.html" class="content__link">Get impressed→</a>
-				</div>
-			</div>
-			<div class="content-wrap">
-				<div class="content content--layout content--layout-2">
-					<img class="content__img" src="img/4.jpg" alt="Some image" />
+
+			<div class="content-wrap" style="justify-content: flex-start;">
+				<div class="content content--layout content--layout-copy">
+					<!-- <img class="content__img" src="img/1.jpg" alt="Some image" /> -->
 					<h3 class="content__title" style="text-shadow:0px 0px 20px hsl(57, 100%, 30%)">code</h3>
-					<p class="content__author">Code it</p>
-					<p class="content__desc">Computing: the final frontier?</p>
-					<a href="code.html" class="content__link">Get impressed→</a>
+					<!-- <p class="content__author">menus Designing</p> -->
+					<!-- <p class="content__desc">Design&<br>Prototype&<br>Evaluate&<br>Design</p> -->
+					<!-- <a href="design.html" class="content__link">Get impressed→</a> -->
 				</div>
-			</div>
-			<div class="content-wrap">
-				<div class="content content--layout content--layout-4">
-					<img class="content__img" src="img/3.jpg" alt="Some image" />
-					<h3 class="content__title" style="text-shadow:0px 0px 20px hsl(196, 100%, 36.9%)">communicate</h3>
-					<p class="content__author">Explain it</p>
-					<p class="content__desc">The missing link</p>
-					<a href="comm.html" class="content__link">Get impressed→</a>
-				</div>
-			</div>
-			<div class="content-wrap">
-				<div class="content content--layout content--layout-3">
-					<img class="content__img" src="img/2.jpg" alt="Some image" />
-					<h3 class="content__title">chris</h3>
-					<p class="content__author">About me</p>
-					<p class="content__desc">The man, the myth, the designer.</p>
-					<a href="#" class="content__link">Who I am →</a>
-				</div>
+				<div class="copy">
+					<h1>Design Process</h1>
+					<p>My undergraduate degree, <a target="_blank" href="http://cm.lmc.gatech.edu/">Computational Media</a>, is an interdisciplinary degree between the College of Computing and the Ivan Allen College of Liberal Arts. It's a little bit of a choose your own adventure in that you can pick many upper-level electives.</p>
+
+					<p>I've also gone my own way and pursued skills I wanted in my toolbox:</p>
+
+					<ul>
+						<li>Web UI frameworks</li>
+						<li>Databases (MySQL, MongoDB)</li>
+						<li>Client side (Javascript and frameworks, CSS)</li>
+						<li>Server side (PHP, NodeJS)</li>
+						<li>An assortment of languages, including Java, C, C++, C#, Smalltalk, Processing, Arduino</li>
+						<li>Making (laser cutting, woodwork, Arduino, circuitry)</li>
+						<li>Some Kinect experience</li>
+						<li>Some signal processing</li>
+						<li>Some machine learning</li>
+					</ul>
+
+					<p>I used many of these skills in my internships at <a target="_blank" href="http://bitpay.com">BitPay</a>, a bitcoin payment processing company, and Coca-Cola. I developed a full stack including mongoDB, NodeJS, HTML/CSS/JS, Handlebars, and AngularJS.</p>
+					</div>
 			</div>
 		</main>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<!--<script src="js/imagesloaded.pkgd.min.js"></script>
 		<script src="js/anime.min.js"></script>
 		<script src="js/scrollMonitor.js"></script>
-		<script src="js/demo1.js"></script>
+		<!--<script src="js/demo1.js"></script>-->
+		<script type="text/javascript">document.body.classList.remove('loading');</script>
 	</body>
 </html>
