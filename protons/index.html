@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Protons</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+</head>
+<body>
+	<h1>Protons</h1>
+</body>
+<script type="text/javascript">
+    var width = window.innerWidth*0.9;
+    var height = window.innerHeight*0.9;
+    var marginLeft = 30;
+    var barWidth = width/food.length;
+
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    var y = d3.scaleLinear()
+        .domain([0, .25])
+        .range([height, 0]);
+
+    var yAxis = d3.axisLeft(y);
+
+    var svg = d3.select("body").append("svg")
+        .attr("height", height)
+        .attr("width", width);
+
+    svg.selectAll("rect")
+        .data(food)
+        .enter().append("rect")
+            .attr("class", "bar")
+            .attr("height", function(d,i){
+                return y(proteinPerCalorie(d.protein, d.calories));
+            })
+            .attr("width", barWidth*0.9)
+            .attr("x",function(d,i){
+                return (i*barWidth)+marginLeft;
+            })
+            .attr("y", function(d,i){
+                return  y(proteinPerCalorie(d.protein, d.calories));
+            })
+            .on("mouseover", function(d){
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html(restaurants[d.restaurant] + "<br><span class='foodName'>"+ d.name +"</span><br>Protein: " + d.protein + "<br>Calories: " + d.calories + "<br>Protein/calorie: "+proteinPerCalorie(d.protein, d.calories))
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+    svg.selectAll("text")
+        .data(food)
+            .enter().append("text")
+            .attr("class", "text")
+            .attr("x", function(d, i){
+                return (i*barWidth)+marginLeft;
+            })
+            .attr("y", function(d, i){
+                return y(proteinPerCalorie(d.protein, d.calories));
+            })
+            .text(function(d){
+                return d.protein;
+            });
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(" + marginLeft + ",0)")
+        .call(yAxis);
+
+    function proteinPerCalorie(protein, calories){
+        return Math.round(1000.0*protein/calories)/1000.0;
+    }
+
+</script>
+</html>
