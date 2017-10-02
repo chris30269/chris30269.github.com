@@ -68,6 +68,13 @@ var food = [
 		"protein":14,
 		"calories":240,
 		"price":1.3
+	},
+	{
+		"name":"CHICKEN PEPPERONI PARM",
+		"restaurant":1,
+		"protein":37,
+		"calories":610,
+		"price":1.3
 	}
 ];
 
