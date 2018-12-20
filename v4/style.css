@@ -6,7 +6,7 @@ svg{
 	max-height: 99vh;
 }
 g{
-	transition: transform 100ms ease-out;
+	transition: transform 100ms ease-out, opacity 100ms ease-out;
 }
 g:hover{
 	cursor: pointer;

@@ -5,38 +5,42 @@ $(function(){
 	var me = $(".me");
 
 	design.on("mouseenter touchstart", function(){
-		$(".design").attr("transform", "translate(-20,-20)");
-		$("html").css("background-color", "rgba(255,242,0,.3)");
+		design.attr("transform", "translate(-40,-40)");
+		prototype.attr("opacity", ".5");
+		evaluate.attr("opacity", ".5");
 	});
 	design.on("mouseout touchend", function(){
 		$(".design").attr("transform", "translate(0,0)");
-		$("html").css("background-color", "#fafafa");
+		resetOpacities(design, prototype, evaluate);
 	});
 	prototype.on("mouseenter touchstart", function(){
-		$(".prototype").attr("transform", "translate(20,-20)");
-		$("html").css("background-color", "rgba(236, 0, 140, .3)");
+		$(".prototype").attr("transform", "translate(40,-40)");
+		design.attr("opacity", ".5");
+		evaluate.attr("opacity", ".5");
 	});
 	prototype.on("mouseout touchend", function(){
 		$(".prototype").attr("transform", "translate(0,0)");
-		$("html").css("background-color", "#fafafa");
+		resetOpacities(design, prototype, evaluate);
 	});
 	evaluate.on("mouseenter touchstart", function(){
-		$(".evaluate").attr("transform", "translate(0,20)");
-		$("html").css("background-color", "rgba(0, 174, 239, .3)");
+		$(".evaluate").attr("transform", "translate(0,40)");
+		prototype.attr("opacity", ".5");
+		design.attr("opacity", ".5");
 	});
 	evaluate.on("mouseout touchend", function(){
 		$(".evaluate").attr("transform", "translate(0,0)");
-		$("html").css("background-color", "#fafafa");
+		resetOpacities(design, prototype, evaluate);
 	});
 	me.on("mouseenter touchstart", function(){
-		$(".me").attr("transform", "scale(1.3)");
-		$("html").css("background-color", "#fafafa");
+		$(".me").attr("transform", "scale(1.1)");
 	});
 	me.on("mouseout touchend", function(){
 		$(".me").attr("transform", "scale(1)");
-		//$("html").css("background-color", "#fafafa");
 	});
-	// $("html").on("mouseenter touchstart", function(){
-	// 	$("html").css("background-color", "#fafafa");
-	// });
 });
+
+function resetOpacities (design, prototype, evaluate) {
+	design.attr("opacity", "1");
+	prototype.attr("opacity", "1");
+	evaluate.attr("opacity", "1");
+}
