@@ -1,0 +1,16 @@
+html{
+	background-color: #fafafa;
+	transition: background-color 100ms ease-out;
+}
+svg{
+	max-height: 99vh;
+}
+g{
+	transition: transform 100ms ease-out;
+}
+g:hover{
+	cursor: pointer;
+}
+.me{
+	transform-origin: center;
+}
