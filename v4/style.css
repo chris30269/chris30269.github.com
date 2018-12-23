@@ -1,15 +1,16 @@
 html{
 	background-color: #fafafa;
-	transition: background-color 100ms ease-out;
+	transition: background-color 1000ms ease-out;
 }
 svg{
 	max-height: 99vh;
 }
 g{
-	transition: transform 100ms ease-out, opacity 100ms ease-out;
+	transition: transform 500ms ease-out, opacity 100ms ease-out;
 }
 g:hover{
 	cursor: pointer;
+	transition: transform 100ms ease-out;
 }
 .me{
 	transform-origin: center;

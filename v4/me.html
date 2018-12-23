@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-size-1">Hello</h1>
+      <h1 class="title is-size-3">Is it me you're looking for?</h1>
+      <p>MS <a target="_blank" href="http://mshci.gatech.edu/">HCI-CS</a> (May 2016)</p>
+      <p>MS <a target="_blank" href="http://www.music.gatech.edu/academics/graduate/overview">Music Technology</a> (May 2014)</p>
+      <p>BS <a target="_blank" href="http://cm.lmc.gatech.edu/">Computational Media</a> (December 2011) (Honors)</p><br>
+
+      <p>I am looking for full-time (contract or permanent) employment.</p><br>
+
+      <p>Put things in front of my eyeballs at <a id="lookAtMe" href="">bruh, turn on JS</a>.</p><br>
+
+      <p>Whisper sweet nothings into my ear holes at <a href="tel:6783788040">678-378-8040</a>.</p><br>
+
+      <p><a href="resume.pdf" target="_blank">Resume</a></p>
+    </div>
+  </section>
+
+  </body>
+  <script type="text/javascript">
+  //don't put my email on blast
+  var poop = 12/4;
+  var boogers = 'chris'+(poop-3);
+  document.getElementById("lookAtMe").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20give%20you%20money");
+    document.getElementById("lookAtMe").innerHTML = boogers.substr(0,5)+"@chrisernst.me";
+  </script>
+</html>
