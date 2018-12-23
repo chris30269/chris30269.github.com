@@ -62,10 +62,11 @@ $(function(){
 		$("html").css({"background-color":"rgb(0, 174, 239)"});
 		setTimeout(function(){window.location.href = "evaluate.html";}, 700);
 	});
+	me.on("click tap", function(){
+		design.css({"transform":"translate(-170vw, -230vh) rotate(180deg)"});
+		prototype.css({"transform":"translate(170vw, -230vh) rotate(110deg)"});
+		evaluate.css({"transform":"translate(0, 230vh) rotate(110deg)"});
+		$("html").css({"background-color":"rgb(0, 0, 0)"});
+		setTimeout(function(){window.location.href = "me.html";}, 700);
+	});
 });
-
-function resetOpacities (design, prototype, evaluate) {
-	design.attr("opacity", "1");
-	prototype.attr("opacity", "1");
-	evaluate.attr("opacity", "1");
-}

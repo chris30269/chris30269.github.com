@@ -13,14 +13,7 @@
     <div class="container">
       <h1 class="title is-size-1">Design</h1>
       <h1 class="title is-size-3">Design Process</h1>
-      <p>I have experience in the entire design process from design, through prototype/build, to evaluation. I have done several types of design and prototyping in different fidelities from paper sketches to interactive looks-like websites. <a href="images/sketch1.JPG" target="_blank">This sketch</a> of an internal site for customer service turned into this <a href="images/axure2.png" target="_blank">interactive prototype</a> in Axure. After handing that over to the developers, I keep an eye on everything and make sure there were no miscommunications. To evaluate, I've used mixpanel to get analytics about usage without having to engage users directly. I've also used a variety of user research methodologies to directly work with users to inform any improvements we could implement.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h1 class="title is-size-3">Information Architecture</h1>
-      <p>I'm a big believer in information architecture. I love organizing data and thinking about abstractions. A clear taxonomy is an important part of the user experience, which sometimes gets overlooked or becomes bloated. I like to use stickies (of course) <a href="images/stickies1.JPG" target="_blank">to map out the high-level structure</a> of a product. I also use card sorts, <a href="images/similarity matrix.png" target="_blank">similarity matrices</a>, and <a href="images/dendogram.png" target="_blank">dendrograms</a> to help with this.</p>
+      <p>I have experience in the entire design process from design, through prototype/build, to evaluation. I have done several types of design and prototyping in different fidelities from paper sketches to interactive looks-like websites. <a onclick="document.getElementById('modal1').classList.add('is-active');">This sketch</a> of an internal site for customer service turned into this <a onclick="document.getElementById('modal2').classList.add('is-active');">interactive prototype</a> in Axure. After handing that over to the developers, I keep an eye on everything and make sure there were no miscommunications. To evaluate, I've used mixpanel to get analytics about usage without having to engage users directly. I've also used a variety of user research methodologies to directly work with users to inform any improvements we could implement.</p>
     </div>
   </section>
 
@@ -47,6 +40,26 @@
       <p>As class projects tend to do, by the end we just had to get it finished so a lot of the "design" was just a temporary fix that never got changed. I'm currently working on redesigning this project with a developer friend using Vue and Bulma.</p>
     </div>
   </section>
+
+  <div class="modal" id="modal1">
+    <div class="modal-background" onclick="document.getElementById('modal1').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image is-4by3">
+        <img src="../images/sketch1.JPG" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal1').classList.remove('is-active');"></button>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-background" onclick="document.getElementById('modal2').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image is-4by3">
+        <img src="../images/axure2.png" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal2').classList.remove('is-active');"></button>
+  </div>
 
   </body>
 </html>
