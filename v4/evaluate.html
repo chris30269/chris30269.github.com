@@ -14,14 +14,14 @@
     <div class="container">
       <h1 class="title is-size-1">Evaluate</h1>
       <h1 class="title is-size-3">User Research</h1>
-      <p>I have used qualitative and quantitative methods to evaluate and iterate on many kinds of designs, from interfaces to physical devices. From guerrilla-type research a la "Don't Make Me Think," to more formal studies using tools like UserTesting.com, I use a variety of methods and tool to evaluate different facets of a product. I have extracted quantitative data from qualitative interviews and surveys, and conducted surveys and questionnaires.</p>
+      <p>I have used qualitative and quantitative methods to evaluate and iterate on many kinds of designs, from interfaces to physical devices. From guerrilla-type research a la "Don't Make Me Think," to more formal studies using tools like <a href="https://www.usertesting.com/" target="_blank">UserTesting.com</a>, I use a variety of methods and tool to evaluate different facets of a product. I have extracted quantitative data from qualitative interviews and surveys, and conducted surveys and questionnaires.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <h1 class="title is-size-3">Information Architecture</h1>
-      <p>I'm a big believer in information architecture. I love organizing data and thinking about abstractions. A clear taxonomy is an important part of the user experience, which sometimes gets overlooked or becomes bloated. I like to use stickies (of course) <a href="images/stickies1.JPG" target="_blank">to map out the high-level structure</a> of a product. I also use card sorts, <a href="images/similarity matrix.png" target="_blank">similarity matrices</a>, and <a href="images/dendogram.png" target="_blank">dendrograms</a> to help with this.</p>
+      <p>I'm a big believer in information architecture. I love organizing data and thinking about abstractions. A clear taxonomy is an important part of the user experience, which sometimes gets overlooked or becomes bloated. I like to use stickies (of course) <a onclick="document.getElementById('modal1').classList.add('is-active');">to map out the high-level structure</a> of a product. I also use card sorts, <a onclick="document.getElementById('modal2').classList.add('is-active');">similarity matrices</a>, and <a onclick="document.getElementById('modal3').classList.add('is-active');">dendrograms</a> to help with this.</p>
     </div>
   </section>
 
@@ -37,14 +37,14 @@
   <section class="section">
     <div class="container">
       <h1 class="title is-size-3">Program Loyalty Management</h1>
-      <p><a href="images/fanfare research results 1.png" target="_blank">These</a> are the results of the legacy design I took over. <a href="images/fanfare research results 2.png" target="_blank">These</a> are the results of my redesign as of April. You can see the time to complete the tasks is down, the completion rates are up, and the ease of one task went up while another went down. I'm now using these results to improve my redesign.</p>
+      <p><a onclick="document.getElementById('modal4').classList.add('is-active');">These</a> are the results of the legacy design I took over. <a onclick="document.getElementById('modal5').classList.add('is-active');">These</a> are the results of my redesign as of April. You can see the time to complete the tasks is down, the completion rates are up, and the ease of one task went up while another went down. I'm now using these results to improve my redesign.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <h1 class="title is-size-3">Masters Project</h1>
-      <p>My masters project collects data automatically about usage and performance to measure its efficacy. This is a custom-designed and -implemented solution specifically and only tailored to this project. Data is automatically collected and analyzed to show total errors (hopfully decreasing over time) and distance from the target (also hopfully decreasing over time). This project involved submitting a formal research proposal and getting approval from the IRB. You can read the incredibly interesting and not at all boring report <a href="">here</a> (tl;dr it worked a little bit).</p>
+      <p>My masters project collects data automatically about usage and performance to measure its efficacy. This is a custom-designed and -implemented solution specifically and only tailored to this project. Data is automatically collected and analyzed to show total errors (hopfully decreasing over time) and distance from the target (also hopfully decreasing over time). This project involved submitting a formal research proposal and getting approval from the IRB. You can read the incredibly interesting and not at all boring report <a href="https://docs.google.com/document/d/1nV7yRHuAOLm0XTzE3UpHmXU5OO5kPT9gIul72G0xQa8/" target="_blank">here</a> (tl;dr it worked a little bit).</p>
     </div>
   </section>
 
@@ -59,10 +59,60 @@
   <section class="section">
     <div class="container">
       <h1 class="title is-size-3">Website Accessibility</h1>
-      <p>I have used <a href="https://www.techsmith.com/morae.html">Morae</a> to evaluate and test websites with real users, especially those with various disabilities.</p><br>
+      <p>I have used <a href="https://www.techsmith.com/morae.html" target="_blank">Morae</a> to evaluate and test websites with real users, especially those with various disabilities.</p><br>
       <p>I identified accessibility issues with the project I took over at Elavon. Text did not have enough contrast, and screenreaders were not taken into consideration when writing the markup. I started an internal guide for designers and developers to implement the low-hanging accessibility fruit.</p>
     </div>
   </section>
+
+  <div class="modal" id="modal1">
+    <div class="modal-background" onclick="document.getElementById('modal1').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src="../images/stickies1.JPG" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal1').classList.remove('is-active');"></button>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-background" onclick="document.getElementById('modal2').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src="../images/similarity matrix.png" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal2').classList.remove('is-active');"></button>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-background" onclick="document.getElementById('modal3').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src="../images/dendogram.png" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal3').classList.remove('is-active');"></button>
+  </div>
+
+  <div class="modal" id="modal4">
+    <div class="modal-background" onclick="document.getElementById('modal4').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src="../images/fanfare research results 1.png" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal4').classList.remove('is-active');"></button>
+  </div>
+
+  <div class="modal" id="modal5">
+    <div class="modal-background" onclick="document.getElementById('modal5').classList.remove('is-active');"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src="../images/fanfare research results 2.png" alt="">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal5').classList.remove('is-active');"></button>
+  </div>
 
   </body>
 </html>
