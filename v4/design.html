@@ -41,6 +41,18 @@
     </div>
   </section>
 
+  <footer class="footer" style="background-color:rgb(255, 242, 0);">
+    <div class="content has-text-centered">
+      <p>Call me beep me: <a></a></p>
+      <p>Slide into my DMs: <a href="">bruh, turn on JS</a></p>
+      <p class="is-size-5 columns is-centered">
+        <a href="linkedin.com" target="_blank" class="column is-narrow has-text-grey-dark"><i class="fab fa-linkedin"></i></a>
+        <a id="lookAtMe" href="" class="column is-narrow has-text-grey-dark"><i class="fas fa-envelope"></i></a>
+        <a id="phone" href="" class="column is-narrow has-text-grey-dark"><i class="fas fa-phone-square"></i></a>
+      </p>
+    </div>
+  </footer>
+
   <div class="modal" id="modal1">
     <div class="modal-background" onclick="document.getElementById('modal1').classList.remove('is-active');"></div>
     <div class="modal-content">
@@ -182,4 +194,17 @@
   </div>
 
   </body>
+  <script type="text/javascript">
+  //don't put my email on blast
+  var poop = 12/4;
+  var boogers = 'chris'+(poop-3);
+  document.getElementById("lookAtMe").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20give%20you%20money");
+  document.querySelector("body > footer > div > p:nth-child(2) > a").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20give%20you%20money");
+  // document.getElementById("lookAtMe").innerHTML = boogers.substr(0,5)+"@chrisernst.me";
+  document.querySelector("body > footer > div > p:nth-child(2) > a").innerHTML = boogers.substr(0,5)+"@chrisernst.me";
+  // document.getElementById("phone").innerHTML = "678-378-"+(8039+1);
+  document.querySelector("body > footer > div > p:nth-child(1) > a").innerHTML = "678-378-"+(8039+1);
+  document.getElementById("phone").href = "tel:67837880"+(39+1);
+  document.querySelector("body > footer > div > p:nth-child(1) > a").href = "tel:67837880"+(39+1);
+  </script>
 </html>

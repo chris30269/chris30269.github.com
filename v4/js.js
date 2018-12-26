@@ -11,7 +11,6 @@ $(function(){
 	});
 	design.on("mouseout touchend", function(){
 		$(".design").attr("transform", "translate(0,0)");
-		resetOpacities(design, prototype, evaluate);
 	});
 	prototype.on("mouseenter touchstart", function(){
 		$(".prototype").attr("transform", "translate(40,-40)");
@@ -20,7 +19,6 @@ $(function(){
 	});
 	prototype.on("mouseout touchend", function(){
 		$(".prototype").attr("transform", "translate(0,0)");
-		resetOpacities(design, prototype, evaluate);
 	});
 	evaluate.on("mouseenter touchstart", function(){
 		$(".evaluate").attr("transform", "translate(0,40)");
@@ -29,7 +27,6 @@ $(function(){
 	});
 	evaluate.on("mouseout touchend", function(){
 		$(".evaluate").attr("transform", "translate(0,0)");
-		resetOpacities(design, prototype, evaluate);
 	});
 	me.on("mouseenter touchstart", function(){
 		$(".me").attr("transform", "scale(1.1)");
