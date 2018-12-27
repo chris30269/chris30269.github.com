@@ -4,35 +4,56 @@ $(function(){
 	var evaluate = $(".evaluate").not(".design, .prototype");
 	var me = $(".me");
 
-	design.on("mouseenter touchstart", function(){
+	design.on("mouseover", function(){
 		design.attr("transform", "translate(-40,-40)");
-		// prototype.attr("opacity", ".5");
-		// evaluate.attr("opacity", ".5");
+		prototype.attr("opacity", ".3");
+		evaluate.attr("opacity", ".3");
 	});
-	design.on("mouseout touchend", function(){
+	design.on("mouseout", function(){
 		$(".design").attr("transform", "translate(0,0)");
+		prototype.attr("opacity", "1");
+		evaluate.attr("opacity", "1");
 	});
-	prototype.on("mouseenter touchstart", function(){
+	prototype.on("mouseover", function(){
 		$(".prototype").attr("transform", "translate(40,-40)");
-		// design.attr("opacity", ".5");
-		// evaluate.attr("opacity", ".5");
+		design.attr("opacity", ".3");
+		evaluate.attr("opacity", ".3");
 	});
-	prototype.on("mouseout touchend", function(){
+	prototype.on("mouseout", function(){
 		$(".prototype").attr("transform", "translate(0,0)");
+		design.attr("opacity", "1");
+		evaluate.attr("opacity", "1");
 	});
-	evaluate.on("mouseenter touchstart", function(){
+	evaluate.on("mouseover", function(){
 		$(".evaluate").attr("transform", "translate(0,40)");
-		// prototype.attr("opacity", ".5");
-		// design.attr("opacity", ".5");
+		prototype.attr("opacity", ".3");
+		design.attr("opacity", ".3");
 	});
-	evaluate.on("mouseout touchend", function(){
+	evaluate.on("mouseout", function(){
 		$(".evaluate").attr("transform", "translate(0,0)");
+		prototype.attr("opacity", "1");
+		design.attr("opacity", "1");
 	});
-	me.on("mouseenter touchstart", function(){
+	me.on("mouseover", function(){
 		$(".me").attr("transform", "scale(1.1)");
+		design.attr("opacity", ".3");
+		prototype.attr("opacity", ".3");
+		evaluate.attr("opacity", ".3");
 	});
-	me.on("mouseout touchend", function(){
+	me.on("mouseout", function(){
 		$(".me").attr("transform", "scale(1)");
+		design.attr("opacity", "1");
+		prototype.attr("opacity", "1");
+		evaluate.attr("opacity", "1");
+	});
+
+	d3.selectAll("g").on("mouseover", function(){
+		d3.select(this).raise();
+		d3.select(this).selectAll("*").style("mix-blend-mode", "normal");
+	});
+	d3.selectAll("g").on("mouseout", function(){
+		d3.select(this).selectAll("*").style("mix-blend-mode", "darken");
+		d3.select(".me").raise();
 	});
 
 	design.on("click tap", function(){
