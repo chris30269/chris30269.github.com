@@ -9,7 +9,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="background-color:rgb(255, 242, 0);">
+    <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
           <img src="../images/logo.png">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </nav>
-    
+
     <section class="section">
       <div class="container">
         <h1 class="title is-size-1">Hello</h1>
@@ -67,12 +67,22 @@
       </div>
     </section>
 
+    <footer class="footer has-background-dark">
+      <div class="content has-text-centered has-text-light">
+        <p class="is-size-5 columns is-centered">
+          <a href="http://linkedin.com/in/chris-ernst-bb17a876" target="_blank" class="column is-narrow has-text-light"><i class="fab fa-linkedin"></i></a>
+          <a id="lookAtMe" href="" class="column is-narrow has-text-light"><i class="fas fa-envelope"></i></a>
+          <a id="phone" href="" class="column is-narrow has-text-light"><i class="fas fa-phone-square"></i></a>
+        </p>
+      </div>
+    </footer>
+
   </body>
   <script type="text/javascript">
   //don't put my email on blast
   var poop = 12/4;
   var boogers = 'chris'+(poop-3);
-  document.getElementById("lookAtMe").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20give%20you%20money");
+  document.getElementById("lookAtMe").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20put%20something%20in%20front%20of%20your%20eyeballs");
   document.getElementById("lookAtMe").innerHTML = boogers.substr(0,5)+"@chrisernst.me";
 
   document.addEventListener('DOMContentLoaded', () => {
