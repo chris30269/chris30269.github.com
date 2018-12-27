@@ -83,6 +83,7 @@
   var poop = 12/4;
   var boogers = 'chris'+(poop-3);
   document.getElementById("lookAtMe").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=I%20want%20to%20put%20something%20in%20front%20of%20your%20eyeballs");
+  document.querySelector("#navbarBasicExample > div.navbar-end > div > a").setAttribute("href", "mailto:"+boogers.substr(0,5)+"@chrisernst.me?subject=First%20off%2C%20I%20just%20need%20to%20say%20your%20website%20is%20amazing");
   document.getElementById("lookAtMe").innerHTML = boogers.substr(0,5)+"@chrisernst.me";
 
   document.addEventListener('DOMContentLoaded', () => {

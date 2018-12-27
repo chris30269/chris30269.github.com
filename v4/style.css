@@ -15,3 +15,7 @@ g:hover{
 .me{
 	transform-origin: center;
 }
+
+.is-horizontal-center {
+  justify-content: center;
+}
