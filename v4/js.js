@@ -48,11 +48,14 @@ $(function(){
 	});
 
 	d3.selectAll("g").on("mouseover", function(){
+		//wait 300ms then raise to get the animation
 		d3.select(this).raise();
 		d3.select(this).selectAll("*").style("mix-blend-mode", "normal");
+		d3.select(".me").raise();
 	});
 	d3.selectAll("g").on("mouseout", function(){
 		d3.select(this).selectAll("*").style("mix-blend-mode", "darken");
+		d3.select(".me").selectAll("*").style("mix-blend-mode", "normal");
 		d3.select(".me").raise();
 	});
 
