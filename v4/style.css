@@ -6,11 +6,11 @@ svg{
 	max-height: 99vh;
 }
 g{
-	transition: transform 500ms ease-out, opacity 300ms ease-out;
+	transition: transform 500ms ease-out, opacity 200ms ease-out;
 }
 g:hover{
 	cursor: pointer;
-	transition: transform 300ms ease-out;
+	transition: transform 200ms ease-out;
 }
 .me{
 	transform-origin: center;
@@ -18,4 +18,16 @@ g:hover{
 
 .is-horizontal-center {
   justify-content: center;
+}
+
+.modal-content{
+	width: 75%;
+}
+
+img:hover{
+	cursor: pointer;
+}
+
+.fa-external-link-alt{
+	font-size: .8rem;
 }

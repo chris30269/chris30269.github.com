@@ -25,7 +25,7 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="design.html">Design</a>
+          <a class="navbar-item is-active" href="design.html">Design</a>
           <a class="navbar-item" href="prototype.html">Prototype</a>
           <a class="navbar-item" href="evaluate.html">Evaluate</a>
           <a class="navbar-item" href="me.html">About</a>
@@ -53,14 +53,14 @@
       <div class="container">
         <h1 class="title is-size-1">Design</h1>
         <h1 class="title is-size-3">Design Process</h1>
-        <p>I have experience in the entire design process from design, through prototype/build, to evaluation. I have done several types of design and prototyping in different fidelities from paper sketches to interactive looks-like websites. <a onclick="document.getElementById('modal1').classList.add('is-active');">This sketch</a> of an internal site for customer service turned into this <a onclick="document.getElementById('modal2').classList.add('is-active');">interactive prototype</a> in Axure. After handing that over to the developers, I keep an eye on everything and make sure there were no miscommunications. To evaluate, I've used mixpanel to get analytics about usage without having to engage users directly. I've also used a variety of user research methodologies to directly work with users to inform any improvements we could implement.</p>
+        <p>I have experience in the entire design process from design, through prototype/build, to evaluation. I have done several types of design and prototyping in different fidelities from paper sketches to interactive looks-like websites. <a onclick="document.getElementById('modal1').classList.add('is-active');">This sketch</a> of an internal site for customer service turned into this <a onclick="document.getElementById('modal2').classList.add('is-active');">interactive prototype</a> in Axure. After handing that over to the developers, I keep an eye on everything and make sure there were no miscommunications. To evaluate, I've used mixpanel to get analytics about usage without having to engage users directly. I've also used a variety of user research methodologies to directly work with users to inform any improvements we could implement.</p><br>
         <div class="columns is-vcentered">
           <figure class="column image">
-            <img src="../images/sketch1.png" alt="">
+            <img src="../images/sketch1.png" alt="" onclick="document.getElementById('modal1').classList.add('is-active');">
             <p class="has-text-centered is-size-7">This sketch</p>
           </figure>
           <figure class="column image">
-            <img src="../images/axure2.png" alt="">
+            <img src="../images/axure2.png" alt="" onclick="document.getElementById('modal2').classList.add('is-active');">
             <p class="has-text-centered is-size-7">Became this prototype</p>
           </figure>
         </div>
@@ -79,12 +79,29 @@
 
     <section class="section">
       <div class="container">
+        <h1 class="title is-size-3">Developer Portal</h1>
+        <p>Elavon wanted to launch a developer portal, and this was the first project I worked on there. For the initial design phase, I <a href="../images/dev portal/I - Landscape - Developer Center.pdf" target="_blank">researched <i class="fas fa-external-link-alt"></i></a> competitors, similar products, and services, gathered <a href="../images/dev portal/II - Existing User Feedback - Developer Center.pdf" target="_blank">existing feedback <i class="fas fa-external-link-alt"></i></a> we already had, identified <a href="../images/dev portal/III - Personas - Developer Center.pdf" target="_blank">personas <i class="fas fa-external-link-alt"></i></a>, wrote <a href="../images/dev portal/IV - User Stories - Developer Center.pdf" target="_blank">user stories <i class="fas fa-external-link-alt"></i></a>, identified <a href="../images/dev portal/V - Red Route User Journeys - Developer Center.pdf" target="_blank">red route user journeys <i class="fas fa-external-link-alt"></i></a>, and  organized the <a onclick="document.getElementById('modal17').classList.add('is-active');">information architecture</a>.</p><br>
+        <div class="columns is-vcentered">
+          <figure class="column image">
+            <img src="../images/dev portal 1.png" alt="" onclick="document.getElementById('modal15').classList.add('is-active');">
+            <p class="has-text-centered is-size-7">First Axure sketch</p>
+          </figure>
+          <figure class="column image">
+            <img src="../images/dev portal 2.png" alt="" onclick="document.getElementById('modal16').classList.add('is-active');">
+            <p class="has-text-centered is-size-7">Higher fidelity Axure prototype</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <h1 class="title is-size-3">Pills4U</h1>
-        <p>In this class project, I designed an interface for an embedded device and accompanying mobile app for senior citizens and their caregivers to manage the complex scheduling of medicines and pills.The mobile app is intended mostly for the caregivers (family, friends, and medical staff) and the device is for the patient. I started with some sketches and diagrams for the mobile app (<a target="_blank" href="../images/ID%206515%20A%20-%20Fall%202014%20-%20Assignment%201%20-%20Ernst.pdf">mockups</a>, <a href="../Assignment%202/index.html" target="_blank">clickable mockups</a>) and <a onclick="document.getElementById('modal3').classList.add('is-active');">the device</a>.</p><br>
+        <p>In this class project, I designed an interface for an embedded device and accompanying mobile app for senior citizens and their caregivers to manage the complex scheduling of medicines and pills.The mobile app is intended mostly for the caregivers (family, friends, and medical staff) and the device is for the patient. I started with some sketches and diagrams for the mobile app (<a target="_blank" href="../images/ID%206515%20A%20-%20Fall%202014%20-%20Assignment%201%20-%20Ernst.pdf">mockups <i class="fas fa-external-link-alt"></i></a>, <a href="../Assignment%202/index.html" target="_blank">clickable mockups <i class="fas fa-external-link-alt"></i></a>) and <a onclick="document.getElementById('modal3').classList.add('is-active');">the device</a>.</p><br>
         <p>On the device, the patient can see when their next dose is, and what it is. It automatically dispenses the correct dosage and gives visual and audio alerts. The device's interface uses large fonts and buttons, and high contrast visuals so that mobility- and visually-impaired patients can still use it easily.</p><br>
-        <p>It has a VoIP system so it can make calls directly from the device. These calls may be initiated by the patient, who may have questions or concerns, or by the system itself if the patient is not taking their medications. It associates doctors with medications and people with their relationship to the patient, so the patient does not need to remember names.</p>
+        <p>It has a VoIP system so it can make calls directly from the device. These calls may be initiated by the patient, who may have questions or concerns, or by the system itself if the patient is not taking their medications. It associates doctors with medications and people with their relationship to the patient, so the patient does not need to remember names.</p><br>
         <figure class="image">
-          <img src="../images/flow%203.png" alt="">
+          <img src="../images/flow%203.png" alt="" onclick="document.getElementById('modal3').classList.add('is-active');">
           <p class="has-text-centered is-size-7">Flow of how the device that the patient uses works</p>
         </figure>
       </div>
@@ -93,7 +110,7 @@
     <section class="section">
       <div class="container">
         <h1 class="title is-size-3">Multi-modal Board Game</h1>
-        <p>This board game (<a onclick="document.getElementById('modal4').classList.add('is-active');">sketch</a>, <a onclick="document.getElementById('modal5').classList.add('is-active');">final</a>) uses <a onclick="document.getElementById('modal6').classList.add('is-active');">RFID</a> to detect when players <a onclick="document.getElementById('modal7').classList.add('is-active');">get on</a> the <a target="_blank" href="http://i.imgur.com/C0zJSRX.gifv">merry-go-round</a>. As a Super Smash-style melee, players lose and gain coins, so if they have enough for the fare, the motor spins and where she stops, nobody knows! Players use the <a onclick="document.getElementById('modal9').classList.add('is-active');">Processing sketch</a> to roll the dice and steal each other's coins.</p>
+        <p>This board game (<a onclick="document.getElementById('modal4').classList.add('is-active');">sketch</a>, <a onclick="document.getElementById('modal5').classList.add('is-active');">final</a>) uses <a onclick="document.getElementById('modal6').classList.add('is-active');">RFID</a> to detect when players <a onclick="document.getElementById('modal7').classList.add('is-active');">get on</a> the <a target="_blank" href="http://i.imgur.com/C0zJSRX.gifv">merry-go-round <i class="fas fa-external-link-alt"></i></a>. As a Super Smash-style melee, players lose and gain coins, so if they have enough for the fare, the motor spins and where she stops, nobody knows! Players use the <a onclick="document.getElementById('modal9').classList.add('is-active');">Processing sketch</a> to roll the dice and steal each other's coins.</p><br>
         <div class="columns is-vcentered">
           <figure class="column image">
             <img src="../images/game.png" alt="" onclick="document.getElementById('modal4').classList.add('is-active');">
@@ -149,7 +166,7 @@
             <p class="has-text-centered is-size-7">Contact Info</p>
           </figure>
         </div>
-        <p>As class projects tend to do, by the end we just had to get it finished so a lot of the "design" was just a temporary fix that never got changed. I'm <a href="https://gleeclub.github.io/internal/index.html" target="_blank">currently working on</a> redesigning this project with a developer friend using Vue and Bulma.</p>
+        <p>As class projects tend to do, by the end we just had to get it finished so a lot of the "design" was just a temporary fix that never got changed. I'm <a href="https://gleeclub.github.io/internal/index.html" target="_blank">currently working on <i class="fas fa-external-link-alt"></i></a> redesigning this project with a developer friend using Vue and Bulma.</p>
       </div>
     </section>
 
@@ -167,7 +184,7 @@
 
     <div class="modal" id="modal1">
       <div class="modal-background" onclick="document.getElementById('modal1').classList.remove('is-active');"></div>
-      <div class="modal-content">
+      <div class="modal-content" style="width:40%;">
         <p class="image">
           <img src="../images/sketch1.png" alt="">
         </p>
@@ -303,6 +320,16 @@
         </p>
       </div>
       <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal14').classList.remove('is-active');"></button>
+    </div>
+
+    <div class="modal" id="modal17">
+      <div class="modal-background" onclick="document.getElementById('modal17').classList.remove('is-active');"></div>
+      <div class="modal-content">
+        <p class="image">
+          <img src="../images/dev portal/Bleach IA.png" alt="Boxes and arrows n stuff">
+        </p>
+      </div>
+      <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('modal17').classList.remove('is-active');"></button>
     </div>
 
   </body>
