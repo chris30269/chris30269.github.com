@@ -36,12 +36,14 @@ $(function(){
 	});
 	me.on("mouseover", function(){
 		$(".me").attr("transform", "scale(1.1)");
+		$("html").css({"background-color":"darkgrey"});
 		design.attr("opacity", ".3");
 		prototype.attr("opacity", ".3");
 		evaluate.attr("opacity", ".3");
 	});
 	me.on("mouseout", function(){
 		$(".me").attr("transform", "scale(1)");
+		$("html").css({"background-color":"#fafafa"});
 		design.attr("opacity", "1");
 		prototype.attr("opacity", "1");
 		evaluate.attr("opacity", "1");
