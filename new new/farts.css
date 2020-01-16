@@ -1,0 +1,75 @@
+body{
+	margin:0;
+}
+.container{
+	display: flex;
+	min-height: 100vh;
+}
+h1{
+	font-size:5vw;
+}
+
+.page{
+	flex-grow: 1;
+	width: 5vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.page:hover{
+	cursor: pointer;
+}
+.content{
+	display: none;
+}
+.heading{
+	text-align: center;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	margin: 0;
+}
+.expanded{
+	flex-grow: 2;
+	width: 85vw;
+	justify-content: flex-start;
+}
+.expanded:hover{
+	cursor: auto;
+}
+.expanded .heading{
+	writing-mode: horizontal-tb;
+}
+.expanded .content{
+	display: block;
+	width: 75vw;
+	align-items: justify-content;
+}
+
+#home{
+	background-color: hsl(0, 0%, 75%);
+}
+#home:not(.expanded):hover{
+	background-color: hsl(0, 0%, 73%);
+}
+
+#design{
+	background-color: hsl(0, 0%, 80%);
+}
+#design:not(.expanded):hover{
+	background-color: hsl(0, 0%, 78%);
+}
+
+#prototype{
+	background-color: hsl(0, 0%, 85%);
+}
+#prototype:not(.expanded):hover{
+	background-color: hsl(0, 0%, 83%);
+}
+
+#evaluate{
+	background-color: hsl(0, 0%, 90%);
+}
+#evaluate:not(.expanded):hover{
+	background-color: hsl(0, 0%, 88%);
+}
