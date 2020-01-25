@@ -8,6 +8,22 @@ body{
 h1{
 	font-size:5vw;
 }
+a:hover, .page:hover h1{
+	color: #007D80;
+}
+h1, h2, a, .expanded:hover h1{
+	color: #009699;
+}
+a:visited{
+	color: #800051;
+}
+a{
+	cursor: pointer;
+	text-decoration: underline;
+}
+h2{
+	text-decoration: underline;
+}
 
 .page{
 	flex-grow: 1;
@@ -16,6 +32,8 @@ h1{
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+
+	transition: width 200ms ease-out;
 }
 .page:hover{
 	cursor: pointer;
