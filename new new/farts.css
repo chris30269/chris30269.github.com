@@ -91,3 +91,8 @@ h2{
 #evaluate:not(.expanded):hover{
 	background-color: hsl(0, 0%, 88%);
 }
+
+.caption{
+	text-align: center;
+	margin-top: 0;
+}
