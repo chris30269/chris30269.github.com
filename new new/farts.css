@@ -1,5 +1,6 @@
 body{
 	margin:0;
+	font-size: 1.2vw;
 }
 .container{
 	display: flex;
@@ -97,4 +98,6 @@ h2{
 .caption{
 	text-align: center;
 	margin-top: 0;
+	opacity: .5;
+	font-size: 1vw;
 }
