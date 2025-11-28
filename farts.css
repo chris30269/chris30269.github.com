@@ -23,7 +23,8 @@ a{
 	text-decoration: underline;
 }
 h2{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	border-bottom: 3px solid #00737F;
 }
 
 .page{
@@ -100,4 +101,14 @@ h2{
 	margin-top: 0;
 	opacity: .5;
 	font-size: 1vw;
+}
+.textblock{
+	display: flex;
+	/*justify-content: space-between;*/
+	align-items: center;
+	gap: 1vw;
+}
+
+hr{
+	border-bottom: 3px solid #00737F;
 }
