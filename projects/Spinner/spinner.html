@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>A Lil Demo</title>
+	<style type="text/css">
+		#modal{
+			background-color: #fafafa;
+			border-radius: 8px;
+			border: 1px solid lightgrey;
+			font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			position: absolute;
+			top:30%;
+			left:35%;
+			width: 600px;
+			height: 400px;
+			overflow: hidden;
+			--time-offset: 100ms;
+			--left-offset: 90%;
+		}
+
+		@keyframes popcorn{
+			0%{
+				top: 101%;
+				transform: rotate(0deg);
+			}
+			50%{
+				top: 25%;
+				transform: rotate(180deg);
+				animation-timing-function: ease-in;
+			}
+			100%{
+				top: 101%;
+				transform: rotate(400deg);
+				animation-timing-function: ease-out;
+			}
+			
+		}
+
+		.emoji{
+			position: absolute;
+			left: var(--left-offset);
+			top: 100%;
+
+			font-size: 100px;
+
+			animation-duration: 1s;
+		  	animation-name: popcorn;
+			animation-iteration-count: infinite;
+			animation-delay: var(--time-offset);
+			animation-iteration-count: 1;
+		}
+		#modal h1{
+			text-align: center;
+			font-size: 32px;
+		}
+		#scrim{
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0,0,0,.5);
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<img src="asm.png" width="100%">
+
+	<div id="scrim"></div>
+
+	<div id="modal">
+		<h1 width="100%">Loading...</h1>
+		<!--<span class="emoji">🍅</span>
+		<span class="emoji">🍅</span>
+		<span class="emoji">🍅</span>
+		<span class="emoji">🍅</span>
+		<span class="emoji">🍅</span>-->
+	</div>
+
+</body>
+<script type="text/javascript">
+	const acceptableEmojis=["🍋","🍊", "🍐", "🍏", "🥔", "🥨", "🍔", "🥪", "🍗", "🍩", "🍤", "🍪", "🫑", "🍑", "🥦", "🍕", "🥩", "🍣", "🍭", "🍱", "🧁", "🍰", "🎂", "🍮", "🍬", "🍫", "🍿", "🥧", "🍦", "🍨", "🍧", "🍡", "🍢", "🥮", "🥠", "🍥", "🍘", "🍚", "🍙", "🍜", "🍝", "🥫", "🥘", "🥗", "🌯", "🌮", "🧆", "🥪", "🍟", "🌭", "🍖", "🥓", "🧇", "🥞", "🍳", "🥖", "🍞", "🥐", "🍠", "🥕", "🌶️", "🍒", "🍓", "🍉","🍌"];
+	const acceptableSayings = ["Warming up the fryer", "Churning the butter", "Preheating the oven", "Mixing the batter", "Greasing the pan", "Folding in the flour"];
+	const modal = document.querySelector("#modal");
+	document.querySelector("#modal h1").innerHTML = acceptableSayings[Math.floor(Math.random() * acceptableSayings.length)]+"...";
+	var leftOffset = 0;
+	var animationDelay = 0;
+
+	// for (var i = document.getElementsByClassName("emoji").length - 1; i >= 0; i--) {
+	// 	refresh(document.getElementsByClassName("emoji")[i]);
+	// }
+
+	spawn();
+	spawn();
+	spawn();
+	spawn();
+	spawn();
+
+	function spawn(){
+		var newEmoji = document.getElementById("modal").appendChild(document.createElement("span"))
+		newEmoji.className = "emoji";
+		newEmoji.innerHTML = acceptableEmojis[Math.floor(Math.random() * acceptableEmojis.length)];
+		leftOffset =  Math.random()*95;
+		newEmoji.style.setProperty("--left-offset", leftOffset+'%');
+		animationDelay = Math.random()*1000;
+		newEmoji.style.setProperty("--time-offset", animationDelay+'ms');
+		newEmoji.addEventListener("animationend", function(newEmoji){
+			//console.log(newEmoji.srcElement);
+			newEmoji.srcElement.remove();
+			spawn();
+		});
+	}
+</script>
+</html>
