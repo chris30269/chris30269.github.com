@@ -26,6 +26,9 @@ h2{
 	/*text-decoration: underline;*/
 	border-bottom: 3px solid #00737F;
 }
+h3{
+	text-decoration: underline;
+}
 
 .page{
 	flex-grow: 1;
@@ -75,25 +78,32 @@ h2{
 	background-color: hsl(0, 0%, 73%);
 }
 
-#design{
+#page1{
 	background-color: hsl(0, 0%, 80%);
 }
-#design:not(.expanded):hover{
+#page1:not(.expanded):hover{
 	background-color: hsl(0, 0%, 78%);
 }
 
-#prototype{
+#page2{
 	background-color: hsl(0, 0%, 85%);
 }
-#prototype:not(.expanded):hover{
+#page2:not(.expanded):hover{
 	background-color: hsl(0, 0%, 83%);
 }
 
-#evaluate{
+#page3{
 	background-color: hsl(0, 0%, 90%);
 }
-#evaluate:not(.expanded):hover{
+#page3:not(.expanded):hover{
 	background-color: hsl(0, 0%, 88%);
+}
+
+#page4{
+	background-color: hsl(0, 0%, 95%);
+}
+#page4:not(.expanded):hover{
+	background-color: hsl(0, 0%, 93%);
 }
 
 .caption{
