@@ -53,6 +53,8 @@ h3{
 	text-orientation: sideways;
 	margin: 0;
 	margin-top: 10px;
+	position: sticky;
+    top: 10px;
 }
 .expanded{
 	flex-grow: 2;
@@ -64,6 +66,7 @@ h3{
 }
 .expanded .heading{
 	writing-mode: horizontal-tb;
+	position: static;
 }
 .expanded .content{
 	display: block;
