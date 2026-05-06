@@ -109,6 +109,13 @@ h3{
 	background-color: hsl(0, 0%, 93%);
 }
 
+#page5{
+	background-color: hsl(0, 0%, 100%);
+}
+#page5:not(.expanded):hover{
+	background-color: hsl(0, 0%, 98%);
+}
+
 .caption{
 	text-align: center;
 	margin-top: 0;
