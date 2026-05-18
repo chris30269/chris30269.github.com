@@ -110,10 +110,10 @@ h3{
 }
 
 #page5{
-	background-color: hsl(0, 0%, 100%);
+	background-color: hsl(0, 0%, 99%);
 }
 #page5:not(.expanded):hover{
-	background-color: hsl(0, 0%, 98%);
+	background-color: hsl(0, 0%, 97%);
 }
 
 .caption{
